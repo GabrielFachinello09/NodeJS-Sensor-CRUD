@@ -58,15 +58,27 @@ app.delete('/api/dados/:id', (req,res) => {
 
     res.json({mensagem: "Dados removidos com sucesso!"});
 
-})
+});
+
+app.put('/api/dados/:id', (req,res) => {
+    const id = parseInt(req.params.id);
+    const index = historicoSensores.findIndex(s => s.id === id);
+
+    if (index === -1){
+        return res.status(404).json({mensagem: "Não é possível atualizar um dado inexistente"});
+};
+
+const{temperatura,umidade,hora} = req.body;
+historicoSensores[index] = {id,temperatura,umidade,hora};
+res.json({mensagem: "Dados atualizado com sucesso!"});
+
+});
+
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
 
     console.log(`Servidor rodando com sucesso na porta ${PORT}`);
 });
-
-// localhost:3000/api/dados
-//node js
-//npm install cors express
-    
