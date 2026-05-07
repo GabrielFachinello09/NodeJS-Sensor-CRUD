@@ -10,7 +10,7 @@ let historicoSensores = [
     {id:2, temperatura:35, umidade:49, hora:"12:00"},
     {id:3, temperatura:32, umidade:52, hora:"14:00"},
     {id:4, temperatura:4, umidade:20, hora:"1:00"},
-    {id:4, temperatura:16, umidade:21, hora:"7:00"}
+    {id:5, temperatura:16, umidade:21, hora:"7:00"}
 ];
 
 app.get('/api/dados', (req,res) => {
