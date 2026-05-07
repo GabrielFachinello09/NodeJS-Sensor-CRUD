@@ -70,7 +70,7 @@ app.put('/api/dados/:id', (req,res) => {
 
 const{temperatura,umidade,hora} = req.body;
 historicoSensores[index] = {id,temperatura,umidade,hora};
-res.json({mensagem: "Dados atualizado com sucesso!"});
+res.json({mensagem: "Dados atualizados com sucesso!"});
 
 });
 
