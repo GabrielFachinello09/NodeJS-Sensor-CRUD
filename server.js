@@ -32,7 +32,7 @@ app.get('/api/dados/:id', (req,res) => {
 app.post('/api/dados', (req,res) => {
     const{temperatura, umidade, hora} = req.body;
     if(!temperatura || !umidade || !hora){
-        res.status(400).json({dados:historicoSensores, mensagem:"Faltou informações na sua postagem."});
+        return res.status(400).json({dados:historicoSensores, mensagem:"Faltou informações na sua postagem."});
     }
     let novosDados = {
         id: historicoSensores.lengtht + 1,
